@@ -4,3 +4,4 @@
 *.[ado]
 *.bin
 *.elf
+gcc/

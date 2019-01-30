@@ -41,12 +41,15 @@
 # Modified January 30, 2019 by Clara Schaertl Short <clarity@utexas.edu>
 #******************************************************************************
 
+export DEBUG # enable debugging options
+
 all: # The default rule
 
 #
 # Defines the part type that this project uses.
 #
 PART=TM4C123GH6PM
+BOARD=ek-tm4c123gxl
 
 #
 # The base directory for TivaWare.
@@ -59,7 +62,7 @@ VALVANO_ROOT=${ROOT}/ValvanoWare
 # Fetches and builds all dependencies.
 #
 deps:
-	-cd .git/hooks && ln -s ../../pre-commit
+	-cd .git/hooks && ln -s ../../.githooks/* .
 	git submodule update --init
 	brew bundle
 
@@ -84,6 +87,7 @@ IPATH=	${ROOT}/include \
 #
 all: ${COMPILER}
 all: ${COMPILER}/project.axf
+all: ${COMPILER}/project.bin
 
 #
 # The rules to clean out all the build products.
@@ -123,9 +127,26 @@ ${LIBVALVANO}:
 	$(MAKE) -C ${VALVANO_ROOT}/valvanolib all
 
 ${COMPILER}/project.axf: ${OBJECTS} ${LIBDRIVER} ${LIBVALVANO} ${LDSCRIPT}
+${COMPILER}/project.bin: ${COMPILER}/project.axf
+
 SCATTERgcc_project=${LDSCRIPT}
-ENTRY_project=ResetISR
+ENTRY_project=Reset_Handler
 CFLAGSgcc=-DTARGET_IS_TM4C123_RB1
+
+#
+# Rules for debugging the project.
+#
+LM4FLASH=lm4flash
+OPENOCD=openocd
+GDB=${PREFIX}-gdb
+
+flash: ${COMPILER}/project.bin
+	$(LM4FLASH) $<
+
+debug: ${COMPILER}/project.axf
+	$(OPENOCD) -f board/${BOARD}.cfg &
+	$(GDB) $<
+	-killall $(OPENOCD)
 
 #
 # Include the automatically generated dependency files.
