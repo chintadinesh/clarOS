@@ -1,1 +1,0 @@
-../TivaWare/examples/project/project.ld

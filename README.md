@@ -9,9 +9,9 @@ on any other Unix that supports [Linuxbrew][linuxbrew].
 
 1. Install Homebrew from <https://brew.sh> if you haven't already.
 2. Clone this repository with `git clone git@github.com:kk4ead/claros`.
-3. Download and install all dependencies with `cd claros && make init`.
-4. (TODO) Build the demo project with `make demo`.
-5. (TODO) Connect a LaunchPad and run `make demo-flash`.
+3. Download and install all dependencies with `cd claros && make deps`.
+4. Build the demo project with `make`.
+5. (TODO) Connect a LaunchPad and run `make flash`.
    You should see the LED on the board start cycling through colors,
    and the name of each color should print to the console.
 
