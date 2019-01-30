@@ -3,3 +3,4 @@ brew "gcc-arm-none-eabi", link: true
 brew "openocd"
 brew "pkg-config"
 brew "libusb"
+brew "clang-format"
