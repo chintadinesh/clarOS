@@ -4,6 +4,3 @@
 [submodule "TivaWare"]
 	path = TivaWare
 	url = git@github.com:kk4ead/TivaWare
-[submodule "lm4tools"]
-	path = lm4tools
-	url = git@github.com:utzig/lm4tools

@@ -59,23 +59,23 @@ VALVANO_ROOT=${ROOT}/ValvanoWare
 # Fetches and builds all dependencies.
 #
 deps:
-	cd .git/hooks && ln -s ../../pre-commit
+	-cd .git/hooks && ln -s ../../pre-commit
 	git submodule update --init
 	brew bundle
-	lm4dir = $(shell brew --prefix)/Cellar/lm4tools/master
-	$(MAKE) -C lm4tools all install PREFIX=$(lm4dir)
-	brew link lm4tools
 
 #
 # Include the common make definitions.
 #
+ifneq ("$(wildcard ${TIVA_ROOT}/makedefs)","")
 include ${TIVA_ROOT}/makedefs
+endif
 
 #
 # Where to find header files that do not live in the source directory.
 #
 IPATH=	${ROOT}/include \
 	${VALVANO_ROOT}/include \
+	${TIVA_ROOT} \
 	${TIVA_ROOT}/inc \
 	${TIVA_ROOT}/driverlib
 
@@ -86,12 +86,18 @@ all: ${COMPILER}
 all: ${COMPILER}/project.axf
 
 #
-# The rule to clean out all the build products.
+# The rules to clean out all the build products.
 #
 clean:
 	@rm -rf ${COMPILER} ${wildcard *~}
+
+realclean: clean
 	@$(MAKE) -C ${TIVA_ROOT} clean
 	@$(MAKE) -C ${VALVANO_ROOT}/valvanolib clean
+
+distclean: clean
+	@rm -rf ${TIVA_ROOT} ${VALVANO_ROOT}
+	@mkdir -p ${TIVA_ROOT} ${VALVANO_ROOT}
 
 #
 # The rule to create the target directory.
@@ -100,14 +106,24 @@ ${COMPILER}:
 	@mkdir -p ${COMPILER}
 
 #
-# Rules for building the project example.
+# Rules for building the project.
 #
-${COMPILER}/project.axf: ${COMPILER}/main.o
-${COMPILER}/project.axf: ${COMPILER}/startup_${COMPILER}.o
-${COMPILER}/project.axf: ${TIVA_ROOT}/driverlib/${COMPILER}/libdriver.a
-${COMPILER}/project.axf: ${VALVANO_ROOT}/valvanolib/${COMPILER}/libvalvano.a
-${COMPILER}/project.axf: ${TIVA_ROOT}/examples/project/project.ld
-SCATTERgcc_project=${TIVA_ROOT}/examples/project/project.ld
+C_SOURCES=$(wildcard *.c)
+ASM_SOURCES=$(wildcard *.s)
+OBJECTS=$(addprefix ${COMPILER}/,$(C_SOURCES:.c=.o)) \
+	$(addprefix ${COMPILER}/,$(ASM_SOURCES:.s=.o))
+
+LIBDRIVER=${TIVA_ROOT}/driverlib/${COMPILER}/libdriver.a
+LIBVALVANO=${VALVANO_ROOT}/valvanolib/${COMPILER}/libvalvano.a
+LDSCRIPT=${TIVA_ROOT}/examples/project/project.ld
+
+${LIBDRIVER}:
+	$(MAKE) -C ${TIVA_ROOT}/driverlib all
+${LIBVALVANO}:
+	$(MAKE) -C ${VALVANO_ROOT}/valvanolib all
+
+${COMPILER}/project.axf: ${OBJECTS} ${LIBDRIVER} ${LIBVALVANO} ${LDSCRIPT}
+SCATTERgcc_project=${LDSCRIPT}
 ENTRY_project=ResetISR
 CFLAGSgcc=-DTARGET_IS_TM4C123_RB1
 
