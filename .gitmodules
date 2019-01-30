@@ -1,0 +1,6 @@
+[submodule "ValvanoWare"]
+	path = ValvanoWare
+	url = git@github.com:kk4ead/ValvanoWare
+[submodule "TivaWare"]
+	path = TivaWare
+	url = git@github.com:kk4ead/TivaWare
