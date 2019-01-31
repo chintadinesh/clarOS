@@ -24,3 +24,11 @@ on any other Unix that supports [Linuxbrew][linuxbrew].
 Thanks to [Josh Minor][jishminor] and [Sean Kirmani][kirmani] for their
 [ee445l-linux][ee445l-linux] tools, and to [Zee Lv][ZeeLivermorium] for his
 [zEEware][zEEware] tools.
+
+[launchpad]: http://www.ti.com/tool/EK-TM4C123GXL
+[linuxbrew]: http://linuxbrew.sh
+[jishminor]: https://github.com/jishminor
+[kirmani]: https://github.com/kirmani
+[ee445l-linux]: https://github.com/jishminor/ee445l-linux
+[ZeeLivermorium]: https://github.com/ZeeLivermorium
+[zEEware]: https://github.com/ZeeLivermorium/zEEware
