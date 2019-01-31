@@ -43,7 +43,6 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include "driverlib/interrupt.h"
 #include "inc/hw_nvic.h"
 #include "inc/hw_types.h"
 
@@ -54,94 +53,94 @@
 //*****************************************************************************
 
 static void DefaultISR(void);
-void Reset_Handler(void);
-void NMI_Handler(void);
-void HardFault_Handler(void);
-void MPUFault_Handler(void);
-void BusFault_Handler(void);
-void UsageFault_Handler(void);
-void SVCall_Handler(void);
-void Debug_Handler(void);
-void PendSV_Handler(void);
-void SysTick_Handler(void);
-void GPIOPortA_Handler(void);
-void GPIOPortB_Handler(void);
-void GPIOPortC_Handler(void);
-void GPIOPortD_Handler(void);
-void GPIOPortE_Handler(void);
-void UART0_Handler(void);
-void UART1_Handler(void);
-void SSI0_Handler(void);
-void I2C0_Handler(void);
-void PWM0Fault_Handler(void);
-void PWM00_Handler(void);
-void PWM01_Handler(void);
-void PWM02_Handler(void);
-void QEI0_Handler(void);
-void ADC0Seq0_Handler(void);
-void ADC0Seq1_Handler(void);
-void ADC0Seq2_Handler(void);
-void ADC0Seq3_Handler(void);
-void Watchdog_Handler(void);
-void Timer0A_Handler(void);
-void Timer0B_Handler(void);
-void Timer1A_Handler(void);
-void Timer1B_Handler(void);
-void Timer2A_Handler(void);
-void Timer2B_Handler(void);
-void Comp0_Handler(void);
-void Comp1_Handler(void);
-void SysCtl_Handler(void);
-void Flash_Handler(void);
-void GPIOPortF_Handler(void);
-void UART2_Handler(void);
-void SSI1_Handler(void);
-void Timer3A_Handler(void);
-void Timer3B_Handler(void);
-void I2C1_Handler(void);
-void QEI1_Handler(void);
-void CAN0_Handler(void);
-void CAN1_Handler(void);
-void Hibernate_Handler(void);
-void USB0_Handler(void);
-void PWM03_Handler(void);
-void UDMA_Handler(void);
-void UDMAError_Handler(void);
-void ADC1Seq0_Handler(void);
-void ADC1Seq1_Handler(void);
-void ADC1Seq2_Handler(void);
-void ADC1Seq3_Handler(void);
-void SSI2_Handler(void);
-void SSI3_Handler(void);
-void UART3_Handler(void);
-void UART4_Handler(void);
-void UART5_Handler(void);
-void UART6_Handler(void);
-void UART7_Handler(void);
-void I2C2_Handler(void);
-void I2C3_Handler(void);
-void Timer4A_Handler(void);
-void Timer4B_Handler(void);
-void Timer5A_Handler(void);
-void Timer5B_Handler(void);
-void WTimer0A_Handler(void);
-void WTimer0B_Handler(void);
-void WTimer1A_Handler(void);
-void WTimer1B_Handler(void);
-void WTimer2A_Handler(void);
-void WTimer2B_Handler(void);
-void WTimer3A_Handler(void);
-void WTimer3B_Handler(void);
-void WTimer4A_Handler(void);
-void WTimer4B_Handler(void);
-void WTimer5A_Handler(void);
-void WTimer5B_Handler(void);
-void SysExc_Handler(void);
-void PWM10_Handler(void);
-void PWM11_Handler(void);
-void PWM12_Handler(void);
-void PWM13_Handler(void);
-void PWM1Fault_Handler(void);
+extern void Reset_Handler(void) __attribute__((weak));
+extern void NMI_Handler(void) __attribute__((weak));
+extern void HardFault_Handler(void) __attribute__((weak));
+extern void MPUFault_Handler(void) __attribute__((weak));
+extern void BusFault_Handler(void) __attribute__((weak));
+extern void UsageFault_Handler(void) __attribute__((weak));
+extern void SVCall_Handler(void) __attribute__((weak));
+extern void Debug_Handler(void) __attribute__((weak));
+extern void PendSV_Handler(void) __attribute__((weak));
+extern void SysTick_Handler(void) __attribute__((weak));
+extern void GPIOPortA_Handler(void) __attribute__((weak));
+extern void GPIOPortB_Handler(void) __attribute__((weak));
+extern void GPIOPortC_Handler(void) __attribute__((weak));
+extern void GPIOPortD_Handler(void) __attribute__((weak));
+extern void GPIOPortE_Handler(void) __attribute__((weak));
+extern void UART0_Handler(void) __attribute__((weak));
+extern void UART1_Handler(void) __attribute__((weak));
+extern void SSI0_Handler(void) __attribute__((weak));
+extern void I2C0_Handler(void) __attribute__((weak));
+extern void PWM0Fault_Handler(void) __attribute__((weak));
+extern void PWM00_Handler(void) __attribute__((weak));
+extern void PWM01_Handler(void) __attribute__((weak));
+extern void PWM02_Handler(void) __attribute__((weak));
+extern void QEI0_Handler(void) __attribute__((weak));
+extern void ADC0Seq0_Handler(void) __attribute__((weak));
+extern void ADC0Seq1_Handler(void) __attribute__((weak));
+extern void ADC0Seq2_Handler(void) __attribute__((weak));
+extern void ADC0Seq3_Handler(void) __attribute__((weak));
+extern void Watchdog_Handler(void) __attribute__((weak));
+extern void Timer0A_Handler(void) __attribute__((weak));
+extern void Timer0B_Handler(void) __attribute__((weak));
+extern void Timer1A_Handler(void) __attribute__((weak));
+extern void Timer1B_Handler(void) __attribute__((weak));
+extern void Timer2A_Handler(void) __attribute__((weak));
+extern void Timer2B_Handler(void) __attribute__((weak));
+extern void Comp0_Handler(void) __attribute__((weak));
+extern void Comp1_Handler(void) __attribute__((weak));
+extern void SysCtl_Handler(void) __attribute__((weak));
+extern void Flash_Handler(void) __attribute__((weak));
+extern void GPIOPortF_Handler(void) __attribute__((weak));
+extern void UART2_Handler(void) __attribute__((weak));
+extern void SSI1_Handler(void) __attribute__((weak));
+extern void Timer3A_Handler(void) __attribute__((weak));
+extern void Timer3B_Handler(void) __attribute__((weak));
+extern void I2C1_Handler(void) __attribute__((weak));
+extern void QEI1_Handler(void) __attribute__((weak));
+extern void CAN0_Handler(void) __attribute__((weak));
+extern void CAN1_Handler(void) __attribute__((weak));
+extern void Hibernate_Handler(void) __attribute__((weak));
+extern void USB0_Handler(void) __attribute__((weak));
+extern void PWM03_Handler(void) __attribute__((weak));
+extern void UDMA_Handler(void) __attribute__((weak));
+extern void UDMAError_Handler(void) __attribute__((weak));
+extern void ADC1Seq0_Handler(void) __attribute__((weak));
+extern void ADC1Seq1_Handler(void) __attribute__((weak));
+extern void ADC1Seq2_Handler(void) __attribute__((weak));
+extern void ADC1Seq3_Handler(void) __attribute__((weak));
+extern void SSI2_Handler(void) __attribute__((weak));
+extern void SSI3_Handler(void) __attribute__((weak));
+extern void UART3_Handler(void) __attribute__((weak));
+extern void UART4_Handler(void) __attribute__((weak));
+extern void UART5_Handler(void) __attribute__((weak));
+extern void UART6_Handler(void) __attribute__((weak));
+extern void UART7_Handler(void) __attribute__((weak));
+extern void I2C2_Handler(void) __attribute__((weak));
+extern void I2C3_Handler(void) __attribute__((weak));
+extern void Timer4A_Handler(void) __attribute__((weak));
+extern void Timer4B_Handler(void) __attribute__((weak));
+extern void Timer5A_Handler(void) __attribute__((weak));
+extern void Timer5B_Handler(void) __attribute__((weak));
+extern void WTimer0A_Handler(void) __attribute__((weak));
+extern void WTimer0B_Handler(void) __attribute__((weak));
+extern void WTimer1A_Handler(void) __attribute__((weak));
+extern void WTimer1B_Handler(void) __attribute__((weak));
+extern void WTimer2A_Handler(void) __attribute__((weak));
+extern void WTimer2B_Handler(void) __attribute__((weak));
+extern void WTimer3A_Handler(void) __attribute__((weak));
+extern void WTimer3B_Handler(void) __attribute__((weak));
+extern void WTimer4A_Handler(void) __attribute__((weak));
+extern void WTimer4B_Handler(void) __attribute__((weak));
+extern void WTimer5A_Handler(void) __attribute__((weak));
+extern void WTimer5B_Handler(void) __attribute__((weak));
+extern void SysExc_Handler(void) __attribute__((weak));
+extern void PWM10_Handler(void) __attribute__((weak));
+extern void PWM11_Handler(void) __attribute__((weak));
+extern void PWM12_Handler(void) __attribute__((weak));
+extern void PWM13_Handler(void) __attribute__((weak));
+extern void PWM1Fault_Handler(void) __attribute__((weak));
 
 //*****************************************************************************
 //
@@ -167,94 +166,92 @@ static uint32_t pui32Stack[64];
 __attribute__((section(".isr_vector"))) void (*const g_pfnVectors[])(void) = {
     (void (*)(void))STACK_TOP,
     Reset_Handler,
-    DefaultISR,  // NMI_Handler,
-    DefaultISR,  // HardFault_Handler,
-    DefaultISR,  // MPUFault_Handler,
-    DefaultISR,  // BusFault_Handler,
-    DefaultISR,  // UsageFault_Handler,
+    NMI_Handler,
+    HardFault_Handler,
+    MPUFault_Handler,
+    BusFault_Handler,
+    UsageFault_Handler,
     0,
     0,
     0,
     0,
-    DefaultISR,  // SVCall_Handler,
-    DefaultISR,  // Debug_Handler,
+    SVCall_Handler,
+    Debug_Handler,
     0,
-    DefaultISR,  // PendSV_Handler,
-    DefaultISR,  // SysTick_Handler,
-    DefaultISR,  // GPIOPortA_Handler,
-    DefaultISR,  // GPIOPortB_Handler,
-    DefaultISR,  // GPIOPortC_Handler,
-    DefaultISR,  // GPIOPortD_Handler,
-    DefaultISR,  // GPIOPortE_Handler,
+    PendSV_Handler,
+    SysTick_Handler,
+    GPIOPortA_Handler,
+    GPIOPortB_Handler,
+    GPIOPortC_Handler,
+    GPIOPortD_Handler,
+    GPIOPortE_Handler,
     UART0_Handler,
-    DefaultISR,  // UART1_Handler,
-    DefaultISR,  // SSI0_Handler,
-    DefaultISR,  // I2C0_Handler,
-    DefaultISR,  // PWM0Fault_Handler,
-    DefaultISR,  // PWM00_Handler,
-    DefaultISR,  // PWM01_Handler,
-    DefaultISR,  // PWM02_Handler,
-    DefaultISR,  // QEI0_Handler,
-    DefaultISR,  // ADC0Seq0_Handler,
-    DefaultISR,  // ADC0Seq1_Handler,
-    DefaultISR,  // ADC0Seq2_Handler,
-    DefaultISR,  // ADC0Seq3_Handler,
-    DefaultISR,  // Watchdog_Handler,
-    DefaultISR,  // Timer0A_Handler,
-    DefaultISR,  // Timer0B_Handler,
-    DefaultISR,  // Timer1A_Handler,
-    DefaultISR,  // Timer1B_Handler,
-    DefaultISR,  // Timer2A_Handler,
-    DefaultISR,  // Timer2B_Handler,
-    DefaultISR,  // Comp0_Handler,
-    DefaultISR,  // Comp1_Handler,
+    UART1_Handler,
+    SSI0_Handler,
+    I2C0_Handler,
+    PWM0Fault_Handler,
+    PWM00_Handler,
+    PWM01_Handler,
+    PWM02_Handler,
+    QEI0_Handler,
+    ADC0Seq0_Handler,
+    ADC0Seq1_Handler,
+    ADC0Seq2_Handler,
+    ADC0Seq3_Handler,
+    Watchdog_Handler,
+    Timer0A_Handler,
+    Timer0B_Handler,
+    Timer1A_Handler,
+    Timer1B_Handler,
+    Timer2A_Handler,
+    Timer2B_Handler,
+    Comp0_Handler,
+    Comp1_Handler,
     0,
-    DefaultISR,  // SysCtl_Handler,
-    DefaultISR,  // Flash_Handler,
-    DefaultISR,  // GPIOPortF_Handler,
-    0,
-    0,
-    DefaultISR,  // UART2_Handler,
-    DefaultISR,  // SSI1_Handler,
-    DefaultISR,  // Timer3A_Handler,
-    DefaultISR,  // Timer3B_Handler,
-    DefaultISR,  // I2C1_Handler,
-    DefaultISR,  // QEI1_Handler,
-    DefaultISR,  // CAN0_Handler,
-    DefaultISR,  // CAN1_Handler,
+    SysCtl_Handler,
+    Flash_Handler,
+    GPIOPortF_Handler,
     0,
     0,
-    DefaultISR,  // Hibernate_Handler,
-    DefaultISR,  // USB0_Handler,
-    DefaultISR,  // PWM03_Handler,
-    DefaultISR,  // UDMA_Handler,
-    DefaultISR,  // UDMAError_Handler,
-    DefaultISR,  // ADC1Seq0_Handler,
-    DefaultISR,  // ADC1Seq1_Handler,
-    DefaultISR,  // ADC1Seq2_Handler,
-    DefaultISR,  // ADC1Seq3_Handler,
+    UART2_Handler,
+    SSI1_Handler,
+    Timer3A_Handler,
+    Timer3B_Handler,
+    I2C1_Handler,
+    QEI1_Handler,
+    CAN0_Handler,
+    CAN1_Handler,
     0,
     0,
-    0,
-    0,
-    0,
-    DefaultISR,  // SSI2_Handler,
-    DefaultISR,  // SSI3_Handler,
-    DefaultISR,  // UART3_Handler,
-    DefaultISR,  // UART4_Handler,
-    DefaultISR,  // UART5_Handler,
-    DefaultISR,  // UART6_Handler,
-    DefaultISR,  // UART7_Handler,
+    Hibernate_Handler,
+    USB0_Handler,
+    PWM03_Handler,
+    UDMA_Handler,
+    UDMAError_Handler,
+    ADC1Seq0_Handler,
+    ADC1Seq1_Handler,
+    ADC1Seq2_Handler,
+    ADC1Seq3_Handler,
     0,
     0,
     0,
     0,
-    DefaultISR,  // I2C2_Handler,
-    DefaultISR,  // I2C3_Handler,
-    DefaultISR,  // Timer4A_Handler,
-    DefaultISR,  // Timer4B_Handler,
+    0,
+    SSI2_Handler,
+    SSI3_Handler,
+    UART3_Handler,
+    UART4_Handler,
+    UART5_Handler,
+    UART6_Handler,
+    UART7_Handler,
     0,
     0,
+    0,
+    0,
+    I2C2_Handler,
+    I2C3_Handler,
+    Timer4A_Handler,
+    Timer4B_Handler,
     0,
     0,
     0,
@@ -273,23 +270,23 @@ __attribute__((section(".isr_vector"))) void (*const g_pfnVectors[])(void) = {
     0,
     0,
     0,
-    DefaultISR,  // Timer5A_Handler,
-    DefaultISR,  // Timer5B_Handler,
-    DefaultISR,  // WTimer0A_Handler,
-    DefaultISR,  // WTimer0B_Handler,
-    DefaultISR,  // WTimer1A_Handler,
-    DefaultISR,  // WTimer1B_Handler,
-    DefaultISR,  // WTimer2A_Handler,
-    DefaultISR,  // WTimer2B_Handler,
-    DefaultISR,  // WTimer3A_Handler,
-    DefaultISR,  // WTimer3B_Handler,
-    DefaultISR,  // WTimer4A_Handler,
-    DefaultISR,  // WTimer4B_Handler,
-    DefaultISR,  // WTimer5A_Handler,
-    DefaultISR,  // WTimer5B_Handler,
-    DefaultISR,  // SysExc_Handler,
     0,
     0,
+    Timer5A_Handler,
+    Timer5B_Handler,
+    WTimer0A_Handler,
+    WTimer0B_Handler,
+    WTimer1A_Handler,
+    WTimer1B_Handler,
+    WTimer2A_Handler,
+    WTimer2B_Handler,
+    WTimer3A_Handler,
+    WTimer3B_Handler,
+    WTimer4A_Handler,
+    WTimer4B_Handler,
+    WTimer5A_Handler,
+    WTimer5B_Handler,
+    SysExc_Handler,
     0,
     0,
     0,
@@ -315,11 +312,13 @@ __attribute__((section(".isr_vector"))) void (*const g_pfnVectors[])(void) = {
     0,
     0,
     0,
-    DefaultISR,  // PWM10_Handler,
-    DefaultISR,  // PWM11_Handler,
-    DefaultISR,  // PWM12_Handler,
-    DefaultISR,  // PWM13_Handler,
-    DefaultISR   // PWM1Fault_Handler
+    0,
+    0,
+    PWM10_Handler,
+    PWM11_Handler,
+    PWM12_Handler,
+    PWM13_Handler,
+    DefaultISR  // PWM1Fault_Handler
 };
 
 //*****************************************************************************
@@ -407,11 +406,8 @@ static void DefaultISR(void) {
 }
 
 // wrap interrupt.h for ValvanoWare
-
-long StartCritical(void) { return IntMasterDisable(); }
-
-void EndCritical(long enabled) {
-  if (enabled) {
-    IntMasterEnable();
-  }
-}
+void DisableInterrupts(void) { __asm(" CPSID I\n"); }
+void EnableInterrupts(void) { __asm(" CPSIE I\n"); }
+void StartCritical(void) { __asm(" MRS R0, PRIMASK\n CPSID I\n"); }
+void EndCritical(void) { __asm(" MSR PRIMASK, R0\n"); }
+void WaitForInterrupt(void) { __asm(" WFI\n"); }
