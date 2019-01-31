@@ -408,10 +408,10 @@ static void DefaultISR(void) {
 
 // wrap interrupt.h for ValvanoWare
 
-long StartCritical(void) {
-  return IntMasterDisable();
-}
+long StartCritical(void) { return IntMasterDisable(); }
 
 void EndCritical(long enabled) {
-  if (enabled) { IntMasterEnable(); }
+  if (enabled) {
+    IntMasterEnable();
+  }
 }
