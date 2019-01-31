@@ -50,8 +50,12 @@ fi
 c_exts='\.(c|h|cc|cpp|hpp|m|objc)$'
 for file in $(git diff --cached --name-only $against | grep -E "$c_exts")
 do
-  echo "clang-format: formatting $file"
-  clang-format -style=google -i $file
+  if [ -f "$file" ]
+  then
+    echo "clang-format: formatting $file"
+    clang-format -style=google -i "$file"
+    sed -i '' 's/[ \t]*$//' "$file"
+  fi
 done
 
 # If there are whitespace errors, print the offending file names and fail.
