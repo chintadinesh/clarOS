@@ -37,7 +37,13 @@
 //
 //*****************************************************************************
 
+//*****************************************************************************
+// Modified January 31, 2019 by Clara Short <clarity@utexas.edu>
+//*****************************************************************************
+
+#include <stdbool.h>
 #include <stdint.h>
+#include "driverlib/interrupt.h"
 #include "inc/hw_nvic.h"
 #include "inc/hw_types.h"
 
@@ -158,163 +164,162 @@ static uint32_t pui32Stack[64];
 // ensure that it ends up at physical address 0x0000.0000.
 //
 //*****************************************************************************
-__attribute__((section(".isr_vector")))
-void (*const g_pfnVectors[])(void) = {
-  (void (*)(void)) STACK_TOP,
-  Reset_Handler,
-  DefaultISR, // NMI_Handler,
-  DefaultISR, // HardFault_Handler,
-  DefaultISR, // MPUFault_Handler,
-  DefaultISR, // BusFault_Handler,
-  DefaultISR, // UsageFault_Handler,
-  0,
-  0,
-  0,
-  0,
-  DefaultISR, // SVCall_Handler,
-  DefaultISR, // Debug_Handler,
-  0,
-  DefaultISR, // PendSV_Handler,
-  DefaultISR, // SysTick_Handler,
-  DefaultISR, // GPIOPortA_Handler,
-  DefaultISR, // GPIOPortB_Handler,
-  DefaultISR, // GPIOPortC_Handler,
-  DefaultISR, // GPIOPortD_Handler,
-  DefaultISR, // GPIOPortE_Handler,
-  DefaultISR, // UART0_Handler,
-  DefaultISR, // UART1_Handler,
-  DefaultISR, // SSI0_Handler,
-  DefaultISR, // I2C0_Handler,
-  DefaultISR, // PWM0Fault_Handler,
-  DefaultISR, // PWM00_Handler,
-  DefaultISR, // PWM01_Handler,
-  DefaultISR, // PWM02_Handler,
-  DefaultISR, // QEI0_Handler,
-  DefaultISR, // ADC0Seq0_Handler,
-  DefaultISR, // ADC0Seq1_Handler,
-  DefaultISR, // ADC0Seq2_Handler,
-  DefaultISR, // ADC0Seq3_Handler,
-  DefaultISR, // Watchdog_Handler,
-  DefaultISR, // Timer0A_Handler,
-  DefaultISR, // Timer0B_Handler,
-  DefaultISR, // Timer1A_Handler,
-  DefaultISR, // Timer1B_Handler,
-  DefaultISR, // Timer2A_Handler,
-  DefaultISR, // Timer2B_Handler,
-  DefaultISR, // Comp0_Handler,
-  DefaultISR, // Comp1_Handler,
-  0,
-  DefaultISR, // SysCtl_Handler,
-  DefaultISR, // Flash_Handler,
-  DefaultISR, // GPIOPortF_Handler,
-  0,
-  0,
-  DefaultISR, // UART2_Handler,
-  DefaultISR, // SSI1_Handler,
-  DefaultISR, // Timer3A_Handler,
-  DefaultISR, // Timer3B_Handler,
-  DefaultISR, // I2C1_Handler,
-  DefaultISR, // QEI1_Handler,
-  DefaultISR, // CAN0_Handler,
-  DefaultISR, // CAN1_Handler,
-  0,
-  0,
-  DefaultISR, // Hibernate_Handler,
-  DefaultISR, // USB0_Handler,
-  DefaultISR, // PWM03_Handler,
-  DefaultISR, // UDMA_Handler,
-  DefaultISR, // UDMAError_Handler,
-  DefaultISR, // ADC1Seq0_Handler,
-  DefaultISR, // ADC1Seq1_Handler,
-  DefaultISR, // ADC1Seq2_Handler,
-  DefaultISR, // ADC1Seq3_Handler,
-  0,
-  0,
-  0,
-  0,
-  0,
-  DefaultISR, // SSI2_Handler,
-  DefaultISR, // SSI3_Handler,
-  DefaultISR, // UART3_Handler,
-  DefaultISR, // UART4_Handler,
-  DefaultISR, // UART5_Handler,
-  DefaultISR, // UART6_Handler,
-  DefaultISR, // UART7_Handler,
-  0,
-  0,
-  0,
-  0,
-  DefaultISR, // I2C2_Handler,
-  DefaultISR, // I2C3_Handler,
-  DefaultISR, // Timer4A_Handler,
-  DefaultISR, // Timer4B_Handler,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  DefaultISR, // Timer5A_Handler,
-  DefaultISR, // Timer5B_Handler,
-  DefaultISR, // WTimer0A_Handler,
-  DefaultISR, // WTimer0B_Handler,
-  DefaultISR, // WTimer1A_Handler,
-  DefaultISR, // WTimer1B_Handler,
-  DefaultISR, // WTimer2A_Handler,
-  DefaultISR, // WTimer2B_Handler,
-  DefaultISR, // WTimer3A_Handler,
-  DefaultISR, // WTimer3B_Handler,
-  DefaultISR, // WTimer4A_Handler,
-  DefaultISR, // WTimer4B_Handler,
-  DefaultISR, // WTimer5A_Handler,
-  DefaultISR, // WTimer5B_Handler,
-  DefaultISR, // SysExc_Handler,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  0,
-  DefaultISR, // PWM10_Handler,
-  DefaultISR, // PWM11_Handler,
-  DefaultISR, // PWM12_Handler,
-  DefaultISR, // PWM13_Handler,
-  DefaultISR  // PWM1Fault_Handler
+__attribute__((section(".isr_vector"))) void (*const g_pfnVectors[])(void) = {
+    (void (*)(void))STACK_TOP,
+    Reset_Handler,
+    DefaultISR,  // NMI_Handler,
+    DefaultISR,  // HardFault_Handler,
+    DefaultISR,  // MPUFault_Handler,
+    DefaultISR,  // BusFault_Handler,
+    DefaultISR,  // UsageFault_Handler,
+    0,
+    0,
+    0,
+    0,
+    DefaultISR,  // SVCall_Handler,
+    DefaultISR,  // Debug_Handler,
+    0,
+    DefaultISR,  // PendSV_Handler,
+    DefaultISR,  // SysTick_Handler,
+    DefaultISR,  // GPIOPortA_Handler,
+    DefaultISR,  // GPIOPortB_Handler,
+    DefaultISR,  // GPIOPortC_Handler,
+    DefaultISR,  // GPIOPortD_Handler,
+    DefaultISR,  // GPIOPortE_Handler,
+    UART0_Handler,
+    DefaultISR,  // UART1_Handler,
+    DefaultISR,  // SSI0_Handler,
+    DefaultISR,  // I2C0_Handler,
+    DefaultISR,  // PWM0Fault_Handler,
+    DefaultISR,  // PWM00_Handler,
+    DefaultISR,  // PWM01_Handler,
+    DefaultISR,  // PWM02_Handler,
+    DefaultISR,  // QEI0_Handler,
+    DefaultISR,  // ADC0Seq0_Handler,
+    DefaultISR,  // ADC0Seq1_Handler,
+    DefaultISR,  // ADC0Seq2_Handler,
+    DefaultISR,  // ADC0Seq3_Handler,
+    DefaultISR,  // Watchdog_Handler,
+    DefaultISR,  // Timer0A_Handler,
+    DefaultISR,  // Timer0B_Handler,
+    DefaultISR,  // Timer1A_Handler,
+    DefaultISR,  // Timer1B_Handler,
+    DefaultISR,  // Timer2A_Handler,
+    DefaultISR,  // Timer2B_Handler,
+    DefaultISR,  // Comp0_Handler,
+    DefaultISR,  // Comp1_Handler,
+    0,
+    DefaultISR,  // SysCtl_Handler,
+    DefaultISR,  // Flash_Handler,
+    DefaultISR,  // GPIOPortF_Handler,
+    0,
+    0,
+    DefaultISR,  // UART2_Handler,
+    DefaultISR,  // SSI1_Handler,
+    DefaultISR,  // Timer3A_Handler,
+    DefaultISR,  // Timer3B_Handler,
+    DefaultISR,  // I2C1_Handler,
+    DefaultISR,  // QEI1_Handler,
+    DefaultISR,  // CAN0_Handler,
+    DefaultISR,  // CAN1_Handler,
+    0,
+    0,
+    DefaultISR,  // Hibernate_Handler,
+    DefaultISR,  // USB0_Handler,
+    DefaultISR,  // PWM03_Handler,
+    DefaultISR,  // UDMA_Handler,
+    DefaultISR,  // UDMAError_Handler,
+    DefaultISR,  // ADC1Seq0_Handler,
+    DefaultISR,  // ADC1Seq1_Handler,
+    DefaultISR,  // ADC1Seq2_Handler,
+    DefaultISR,  // ADC1Seq3_Handler,
+    0,
+    0,
+    0,
+    0,
+    0,
+    DefaultISR,  // SSI2_Handler,
+    DefaultISR,  // SSI3_Handler,
+    DefaultISR,  // UART3_Handler,
+    DefaultISR,  // UART4_Handler,
+    DefaultISR,  // UART5_Handler,
+    DefaultISR,  // UART6_Handler,
+    DefaultISR,  // UART7_Handler,
+    0,
+    0,
+    0,
+    0,
+    DefaultISR,  // I2C2_Handler,
+    DefaultISR,  // I2C3_Handler,
+    DefaultISR,  // Timer4A_Handler,
+    DefaultISR,  // Timer4B_Handler,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    DefaultISR,  // Timer5A_Handler,
+    DefaultISR,  // Timer5B_Handler,
+    DefaultISR,  // WTimer0A_Handler,
+    DefaultISR,  // WTimer0B_Handler,
+    DefaultISR,  // WTimer1A_Handler,
+    DefaultISR,  // WTimer1B_Handler,
+    DefaultISR,  // WTimer2A_Handler,
+    DefaultISR,  // WTimer2B_Handler,
+    DefaultISR,  // WTimer3A_Handler,
+    DefaultISR,  // WTimer3B_Handler,
+    DefaultISR,  // WTimer4A_Handler,
+    DefaultISR,  // WTimer4B_Handler,
+    DefaultISR,  // WTimer5A_Handler,
+    DefaultISR,  // WTimer5B_Handler,
+    DefaultISR,  // SysExc_Handler,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    DefaultISR,  // PWM10_Handler,
+    DefaultISR,  // PWM11_Handler,
+    DefaultISR,  // PWM12_Handler,
+    DefaultISR,  // PWM13_Handler,
+    DefaultISR   // PWM1Fault_Handler
 };
 
 //*****************************************************************************
@@ -365,21 +370,21 @@ void Reset_Handler(void) {
       "        strlt   r2, [r0], #4\n"
       "        blt     zero_loop");
 
-/*
-  //
-  // Enable the floating-point unit.  This must be done here to handle the
-  // case where main() uses floating-point and the function prologue saves
-  // floating-point registers (which will fault if floating-point is not
-  // enabled).  Any configuration of the floating-point unit using DriverLib
-  // APIs must be done here prior to the floating-point unit being enabled.
-  //
-  // Note that this does not use DriverLib since it might not be included in
-  // this project.
-  //
-  HWREG(NVIC_CPAC) =
-      ((HWREG(NVIC_CPAC) & ~(NVIC_CPAC_CP10_M | NVIC_CPAC_CP11_M)) |
-       NVIC_CPAC_CP10_FULL | NVIC_CPAC_CP11_FULL);
-*/
+  /*
+    //
+    // Enable the floating-point unit.  This must be done here to handle the
+    // case where main() uses floating-point and the function prologue saves
+    // floating-point registers (which will fault if floating-point is not
+    // enabled).  Any configuration of the floating-point unit using DriverLib
+    // APIs must be done here prior to the floating-point unit being enabled.
+    //
+    // Note that this does not use DriverLib since it might not be included in
+    // this project.
+    //
+    HWREG(NVIC_CPAC) =
+        ((HWREG(NVIC_CPAC) & ~(NVIC_CPAC_CP10_M | NVIC_CPAC_CP11_M)) |
+         NVIC_CPAC_CP10_FULL | NVIC_CPAC_CP11_FULL);
+  */
   //
   // Call the application's entry point.
   //
@@ -399,4 +404,14 @@ static void DefaultISR(void) {
   //
   while (1) {
   }
+}
+
+// wrap interrupt.h for ValvanoWare
+
+long StartCritical(void) {
+  return IntMasterDisable();
+}
+
+void EndCritical(long enabled) {
+  if (enabled) { IntMasterEnable(); }
 }
