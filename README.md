@@ -11,13 +11,16 @@ on any other Unix that supports [Linuxbrew][linuxbrew].
 2. Clone this repository with `git clone git@github.com:kk4ead/claros`.
 3. Download and install all dependencies with `cd claros && make deps`.
 4. Build the demo project with `make`.
-5. (TODO) Connect a LaunchPad and run `make flash`.
-   You should see the LED on the board start cycling through colors,
-   and the name of each color should print to the console.
+5. Connect a LaunchPad and run `make flash`.
+   You should see the LED on the board start cycling through colors.
+6. Run `screen /dev/cu.usbmodem* 115200` to connect to UART0. You should
+   see "red", "green", "red", "blue", print to the console each time the
+   corresponding color is toggled.
 
-## (TODO) Creating a Project
+## Known Issues
 
-## (TODO) TivaWare and ValvanoWare Authors
+The current libvalvano build includes multiple definitions of some
+functions, leading to linker errors for projects that use those functions.
 
 ## Acknowledgements
 
