@@ -17,11 +17,6 @@ on any other Unix that supports [Linuxbrew][linuxbrew].
    see "red", "green", "red", "blue", print to the console each time the
    corresponding color is toggled.
 
-## Known Issues
-
-The current libvalvano build includes multiple definitions of some
-functions, leading to linker errors for projects that use those functions.
-
 ## Acknowledgements
 
 Thanks to [Josh Minor][jishminor] and [Sean Kirmani][kirmani] for their
