@@ -318,7 +318,7 @@ __attribute__((section(".isr_vector"))) void (*const g_pfnVectors[])(void) = {
     PWM11_Handler,
     PWM12_Handler,
     PWM13_Handler,
-    DefaultISR  // PWM1Fault_Handler
+    PWM1Fault_Handler
 };
 
 //*****************************************************************************
