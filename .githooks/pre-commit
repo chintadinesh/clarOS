@@ -54,7 +54,8 @@ do
   then
     echo "clang-format: formatting $file"
     clang-format -style=google -i "$file"
-    sed -i '' 's/[ \t]*$//' "$file"
+    sed -i '' 's/[ ]*$//' "$file"
+    git add "$file"
   fi
 done
 
