@@ -93,7 +93,7 @@ all: ${COMPILER}/project.bin
 # The rules to clean out all the build products.
 #
 clean:
-	@rm -rf ${COMPILER} ${wildcard *~}
+	@rm -rf ${COMPILER} ${wildcard *~} doc
 
 realclean: clean
 	@$(MAKE) -C ${TIVA_ROOT} clean
