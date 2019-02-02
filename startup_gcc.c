@@ -53,7 +53,7 @@
 //*****************************************************************************
 
 static void DefaultISR(void);
-extern void Reset_Handler(void) __attribute__((weak));
+extern void Reset_Handler(void) __attribute__((weak, noreturn));
 extern void NMI_Handler(void) __attribute__((weak));
 extern void HardFault_Handler(void) __attribute__((weak));
 extern void MPUFault_Handler(void) __attribute__((weak));
@@ -148,6 +148,9 @@ extern void PWM1Fault_Handler(void) __attribute__((weak));
 //
 //*****************************************************************************
 extern int main(void);
+// alternatively (for Arduino-style projects):
+// extern void setup(void);
+// extern void loop(void);
 
 //*****************************************************************************
 //
@@ -388,6 +391,11 @@ void Reset_Handler(void) {
   // Call the application's entry point.
   //
   main();
+  // alternatively (for Arduino-style projects)
+  // setup();
+  // while (1) {
+  //   loop();
+  // }
 }
 
 //*****************************************************************************
