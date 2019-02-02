@@ -16,19 +16,19 @@ static void toggle(int i) {
   switch (i & 3) {
     case 0:
       LED_RedToggle();
-      UART_OutString(MSG_RED);
+      UART_OutString((char *)MSG_RED);
       break;
     case 1:
       LED_GreenToggle();
-      UART_OutString(MSG_GREEN);
+      UART_OutString((char *)MSG_GREEN);
       break;
     case 2:
       LED_RedToggle();
-      UART_OutString(MSG_RED);
+      UART_OutString((char *)MSG_RED);
       break;
     case 3:
       LED_BlueToggle();
-      UART_OutString(MSG_BLUE);
+      UART_OutString((char *)MSG_BLUE);
       break;
     default:
       break;
