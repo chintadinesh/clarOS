@@ -49,12 +49,12 @@ all: # The default rule
 # Defines the part type that this project uses.
 #
 PART=TM4C123GH6PM
-BOARD=ek-tm4c123gxl
+BOARD=ti_ek-tm4c123gxl
 
 #
 # The base directory for TivaWare.
 #
-ROOT=.
+#ROOT=.
 TIVA_ROOT=${ROOT}/TivaWare
 VALVANO_ROOT=${ROOT}/ValvanoWare
 

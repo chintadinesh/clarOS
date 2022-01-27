@@ -43,6 +43,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+
 #include "inc/hw_nvic.h"
 #include "inc/hw_types.h"
 
@@ -54,93 +55,93 @@
 
 static void DefaultISR(void);
 extern void Reset_Handler(void) __attribute__((weak, noreturn));
-extern void NMI_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void HardFault_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void MPUFault_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void BusFault_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UsageFault_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SVCall_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Debug_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PendSV_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SysTick_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void GPIOPortA_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void GPIOPortB_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void GPIOPortC_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void GPIOPortD_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void GPIOPortE_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SSI0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void I2C0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM0Fault_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM00_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM01_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM02_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void QEI0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC0Seq0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC0Seq1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC0Seq2_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC0Seq3_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Watchdog_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer0A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer0B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer1A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer1B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer2A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer2B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Comp0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Comp1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SysCtl_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Flash_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void GPIOPortF_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART2_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SSI1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer3A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer3B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void I2C1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void QEI1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void CAN0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void CAN1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Hibernate_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void USB0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM03_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UDMA_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UDMAError_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC1Seq0_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC1Seq1_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC1Seq2_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void ADC1Seq3_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SSI2_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SSI3_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART3_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART4_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART5_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART6_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void UART7_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void I2C2_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void I2C3_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer4A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer4B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer5A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void Timer5B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer0A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer0B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer1A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer1B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer2A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer2B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer3A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer3B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer4A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer4B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer5A_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void WTimer5B_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void SysExc_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM10_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM11_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM12_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM13_Handler(void) __attribute__((weak, alias ("DefaultISR")));
-extern void PWM1Fault_Handler(void) __attribute__((weak, alias ("DefaultISR")));
+extern void NMI_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void HardFault_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void MPUFault_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void BusFault_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UsageFault_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SVCall_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Debug_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PendSV_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SysTick_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void GPIOPortA_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void GPIOPortB_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void GPIOPortC_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void GPIOPortD_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void GPIOPortE_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SSI0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void I2C0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM0Fault_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM00_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM01_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM02_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void QEI0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC0Seq0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC0Seq1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC0Seq2_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC0Seq3_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Watchdog_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer0A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer0B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer1A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer1B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer2A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer2B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Comp0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Comp1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SysCtl_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Flash_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void GPIOPortF_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART2_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SSI1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer3A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer3B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void I2C1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void QEI1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void CAN0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void CAN1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Hibernate_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void USB0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM03_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UDMA_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UDMAError_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC1Seq0_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC1Seq1_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC1Seq2_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void ADC1Seq3_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SSI2_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SSI3_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART3_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART4_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART5_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART6_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void UART7_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void I2C2_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void I2C3_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer4A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer4B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer5A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void Timer5B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer0A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer0B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer1A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer1B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer2A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer2B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer3A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer3B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer4A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer4B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer5A_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void WTimer5B_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void SysExc_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM10_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM11_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM12_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM13_Handler(void) __attribute__((weak, alias("DefaultISR")));
+extern void PWM1Fault_Handler(void) __attribute__((weak, alias("DefaultISR")));
 
 //*****************************************************************************
 //
@@ -321,8 +322,7 @@ __attribute__((section(".isr_vector"))) void (*const g_pfnVectors[])(void) = {
     PWM11_Handler,
     PWM12_Handler,
     PWM13_Handler,
-    PWM1Fault_Handler
-};
+    PWM1Fault_Handler};
 
 //*****************************************************************************
 //
@@ -390,6 +390,11 @@ void Reset_Handler(void) {
   //
   // Call the application's entry point.
   //
+
+  HWREG(NVIC_CPAC) =
+      ((HWREG(NVIC_CPAC) & ~(NVIC_CPAC_CP10_M | NVIC_CPAC_CP11_M)) |
+       NVIC_CPAC_CP10_FULL | NVIC_CPAC_CP11_FULL);
+
   main();
   // alternatively (for Arduino-style projects)
   // setup();
