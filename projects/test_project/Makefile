@@ -44,11 +44,14 @@
 DEBUG=1
 export DEBUG
 
+VERBOSE=1
+export VERBOSE
+
 #CFLAGS += -g -D DEBUG
 
 ROOT=../../
 
-PROJ_NAME=project
+PROJ_NAME=test_project
 
 #
 # Include the common make definitions.
@@ -59,10 +62,9 @@ endif
 
 SRCS += $(wildcard *.c)
 
-all: $(PROJ_NAME).elf
+#all: $(PROJ_NAME).elf
 
-$(PROJ_NAME).elf: $(OBJECTS)
-	@echo ~~~~~~~~~~~
-	@echo $(CFLAGS)
-	@echo ~~~~~~~~~~~
-	$(LD) -T$(LDSCRIPT) --entry Reset_Handler -o gcc/$@ $^ $(LIBS)
+#
+#$(PROJ_NAME).elf: $(OBJECTS)
+#
+#	$(LD) -T$(LDSCRIPT) --entry Reset_Handler -o ${COMPILER}/$@ $^ $(LIBS)

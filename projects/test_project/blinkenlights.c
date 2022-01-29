@@ -51,5 +51,23 @@ int main(void) {
     SysTick_Wait10ms(DELAY);
     LED_BlueToggle();
     SysTick_Wait10ms(DELAY);
+
+    /*
+    LED_BlueToggle();
+    SysTick_Wait10ms(DELAY);
+    LED_BlueToggle();
+    SysTick_Wait10ms(DELAY);
+    LED_BlueToggle();
+    SysTick_Wait10ms(DELAY);
+
+
+
+    LED_BlueToggle();
+    SysTick_Wait10ms(DELAY);
+    LED_BlueToggle();
+    SysTick_Wait10ms(DELAY);
+    LED_BlueToggle();
+    SysTick_Wait10ms(DELAY);
+    */
   }
 }

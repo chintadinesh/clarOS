@@ -79,8 +79,8 @@ IPATH=	${ROOT}/include \
 # The default rule, which causes the project example to be built.
 #
 all: ${COMPILER}
-all: ${COMPILER}/project.axf
-all: ${COMPILER}/project.bin
+all: ${COMPILER}/${PROJ_NAME}.axf
+all: ${COMPILER}/${PROJ_NAME}.bin
 
 #
 # The rules to clean out all the build products.
@@ -144,11 +144,12 @@ ${LIBDRIVER}:
 ${LIBVALVANO}:
 	$(MAKE) -C ${VALVANO_ROOT}/valvanolib all
 
-${COMPILER}/project.axf: ${OBJECTS} ${LIBDRIVER} ${LIBVALVANO} ${LDSCRIPT}
-${COMPILER}/project.bin: ${COMPILER}/project.axf
+${COMPILER}/${PROJ_NAME}.axf: ${OBJECTS} ${LIBDRIVER} ${LIBVALVANO} ${LDSCRIPT}
+${COMPILER}/${PROJ_NAME}.bin: ${COMPILER}/${PROJ_NAME}.axf
 
-SCATTERgcc_project=${LDSCRIPT}
-ENTRY_project=Reset_Handler
+#this defines the load script
+SCATTERgcc_${PROJ_NAME}=${LDSCRIPT}
+ENTRY_${PROJ_NAME}=Reset_Handler
 CFLAGSgcc=-DTARGET_IS_TM4C123_RB1
 
 #
@@ -158,11 +159,11 @@ LM4FLASH=lm4flash
 OPENOCD=openocd
 GDB=${PREFIX}-gdb
 
-flash: ${COMPILER}/project.bin
+flash: ${COMPILER}/${PROJ_NAME}.bin
 	$(LM4FLASH) $<
 
-debug: ${COMPILER}/project.axf
-	$(OPENOCD) -f board/${BOARD}.cfg &
+debug: ${COMPILER}/${PROJ_NAME}.axf
+	$(OPENOCD) -d0 -f board/${BOARD}.cfg &
 	$(GDB) $<
 	-killall $(OPENOCD)
 
