@@ -51,7 +51,7 @@ export VERBOSE
 
 ROOT=../../
 
-PROJ_NAME=test_project
+PROJ_NAME=$(shell basename $(CURDIR))
 
 #
 # Include the common make definitions.
