@@ -1349,6 +1349,44 @@ void ST7735_OutUDec2(uint32_t n, uint32_t l) {
 //        value   signed integer to be printed
 void ST7735_Message(uint32_t d, uint32_t l, char *pt, int32_t value) {
   // write this as part of Labs 1 and 2
+
+  /*
+  int bgColor = 0;
+
+  while( c !=  0){
+      ST7735_DrawCharS(x++, res_line, *c, textColor,
+                    bgColor, size);
+  }
+  */
+
+  // TODO: clear the previous characters
+  // One way of doing this is print empty string in the end.
+  // when the device is not recognized
+  if (!(d == 0 || d == 1)) return;
+
+  // incorrect line
+  if (l < 0 || l > 7) return;
+
+  int res_line = d * 8 + l;
+  int x = 0;
+  int textColor = 256;
+
+  int len_str = 0;
+  char *c = pt;
+
+  while (*c != 0) {
+    c++;
+    len_str++;
+  }
+
+  ST7735_DrawString(x, res_line, pt, textColor);
+
+  ST7735_DrawString(len_str + 1, res_line, " ", textColor);
+
+  char snum[5];
+  itoa(value, snum, 10);
+
+  ST7735_DrawString(len_str + 3, res_line, snum, textColor);
 }
 
 //-----------------------ST7735_OutUDec4-----------------------

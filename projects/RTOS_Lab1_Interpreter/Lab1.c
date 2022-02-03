@@ -35,6 +35,7 @@
 #include "../inc/LaunchPad.h"
 #include "../inc/PLL.h"
 #include "../inc/Timer4A.h"
+#include "../inc/Timer5A.h"
 #include "../inc/UART0int.h"
 #include "../inc/tm4c123gh6pm.h"
 
@@ -61,11 +62,20 @@ int main(void) {
   ADC_Init(3);  // channel 3 is PE0 <- connect an IR distance sensor to J8 to
                 // get a realistic analog signal
   Timer4A_Init(&DAStask, 80000000 / 10, 1);  // 10 Hz sampling, priority=1
+
+  Timer5A_Init(&OS_timer_task,
+               80000000 / 1000,  // number of clock periods
+                                 // for 1ms required period, we use the
+                                 // value
+               1);               // priority
+
   OS_ClearMsTime();  // start a periodic interrupt to maintain time
+
   EnableInterrupts();
 
   Interpreter();  // finally, launch interpreter, should never return
 
+  // should never get executed
   int count = 0;
   while (1) count++;
 }

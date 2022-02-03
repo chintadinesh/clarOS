@@ -26,6 +26,9 @@
 int32_t MaxJitter;  // largest time jitter between interrupts in usec
 #define JITTERSIZE 64
 uint32_t const JitterSize = JITTERSIZE;
+
+uint32_t Curr_time = 0;
+
 uint32_t JitterHistogram[JITTERSIZE] = {
     0,
 };
@@ -376,10 +379,22 @@ uint32_t OS_TimeDifference(uint32_t start, uint32_t stop) {
 // ******** OS_ClearMsTime ************
 // sets the system time to zero (solve for Lab 1), and start a periodic
 // interrupt Inputs:  none Outputs: none You are free to change how this works
-void OS_ClearMsTime(void){
-    // put Lab 1 solution here
+void OS_ClearMsTime(void) {
+  // put Lab 1 solution here
 
+  // TODO:
+  // disable the interrupts here
+  Curr_time = 0;
+
+  // reenable the interrupts
 };
+
+/* ******** timer_task *********
+ * Increments the timer on timer interrupts
+ * defining function here as the curr time variable is defined here
+ * expected to run at 1KHz frequency
+ */
+void OS_timer_task(void) { Curr_time++; }
 
 // ******** OS_MsTime ************
 // reads the current time in msec (solve for Lab 1)
@@ -390,7 +405,9 @@ void OS_ClearMsTime(void){
 // call to OS_AddPeriodicThread
 uint32_t OS_MsTime(void) {
   // put Lab 1 solution here
-  return 0;  // replace this line with solution
+
+  return Curr_time;
+  // return 0;  // replace this line with solution
 };
 
 //******** OS_Launch ***************

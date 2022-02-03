@@ -316,4 +316,11 @@ int OS_RedirectToUART(void);
  */
 int OS_RedirectToST7735(void);
 
+/* ******** OS_timer_task *********
+ * @Increments the timer on timer interrupts
+ * @defining function here as the curr time variable is defined here
+ * @expected to run at 1KHz frequency
+ */
+void OS_timer_task(void) { return; }
+
 #endif

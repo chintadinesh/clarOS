@@ -24,6 +24,8 @@
 
 #include "../inc/tm4c123gh6pm.h"
 
+extern Curr_time;
+
 void (*PeriodicTask5)(void);  // user function
 
 // ***************** Timer5A_Init ****************

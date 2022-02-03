@@ -11,6 +11,9 @@
 
  ******************************************************************************/
 
+// Maximum size of the input lines
+#define MAX_INPUT_SIZE 30  // maximumx input size
+
 /**
  * @details  Run the user interface.
  * @param  none
