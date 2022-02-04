@@ -1,4 +1,5 @@
 // UART.h
+#include <stdint.h>
 // Runs on LM3S811, LM3S1968, LM3S8962, LM4F120, TM4C123
 // Simple device driver for the UART.
 // Daniel Valvano

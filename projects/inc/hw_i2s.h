@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_i2s.h - Macros for use in accessing the I2S registers.
 //

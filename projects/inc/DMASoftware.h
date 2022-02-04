@@ -1,4 +1,5 @@
 // DMASoftware.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Software triggered memory block transfer
 // Jonathan Valvano

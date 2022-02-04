@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // can.h - Defines and Macros for the CAN controller.
 //

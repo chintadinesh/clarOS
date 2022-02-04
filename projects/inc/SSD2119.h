@@ -1,4 +1,5 @@
 // SSD2119.h
+#include <stdint.h>
 // Steven Prickett (steven.prickett@gmail.com)
 
 #ifndef SSD2119_H

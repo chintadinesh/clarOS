@@ -57,7 +57,15 @@
 #include "../inc/UART1int.h"
 #include "../inc/tm4c123gh6pm.h"
 
-const uint32_t RECVSIZE = 128;
+// const uint32_t RECVSIZE = 128;
+#define RECVSIZE 128
+
+// const uint32_t MAXCHARACTERISTICS = 10;
+#define MAXCHARACTERISTICS 10
+
+// const uint32_t NOTIFYMAXCHARACTERISTICS = 4;
+#define NOTIFYMAXCHARACTERISTICS 4
+
 uint8_t RecvBuf[RECVSIZE];
 
 uint32_t fcserr;      // debugging counts of errors
@@ -547,7 +555,9 @@ typedef struct characteristics {
   void (*callBackRead)(void);   // action if SNP Characteristic Read Indication
   void (*callBackWrite)(void);  // action if SNP Characteristic Write Indication
 } characteristic_t;
-const uint32_t MAXCHARACTERISTICS = 10;
+
+// const uint32_t MAXCHARACTERISTICS = 10;
+
 uint32_t CharacteristicCount = 0;
 characteristic_t CharacteristicList[MAXCHARACTERISTICS];
 typedef struct NotifyCharacteristics {
@@ -559,7 +569,9 @@ typedef struct NotifyCharacteristics {
   uint8_t *pt;          // pointer to user data array, stored little endian
   void (*callBackCCCD)(void);  // action if SNP CCCD Updated Indication
 } NotifyCharacteristic_t;
-const uint32_t NOTIFYMAXCHARACTERISTICS = 4;
+
+// const uint32_t NOTIFYMAXCHARACTERISTICS = 4;
+
 uint32_t NotifyCharacteristicCount = 0;
 NotifyCharacteristic_t NotifyCharacteristicList[NOTIFYMAXCHARACTERISTICS];
 

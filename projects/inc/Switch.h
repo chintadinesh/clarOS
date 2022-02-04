@@ -1,4 +1,5 @@
 // Switch.h
+#include <stdint.h>
 // Runs on TMC4C123
 // Use GPIO in edge time mode to request interrupts on any
 // edge of PF4 and start Timer0B. In Timer0B one-shot

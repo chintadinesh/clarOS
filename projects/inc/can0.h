@@ -1,4 +1,5 @@
 // *********can0.h ***************
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use CAN0 to communicate on CAN bus
 // CAN0Rx PE4 (8) I TTL CAN module 0 receive.

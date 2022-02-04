@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      eDisk.h
  * @brief     low-level SDC driver
  * @details   This version of the driver has been

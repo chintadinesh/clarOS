@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_watchdog.h - Macros used when accessing the Watchdog Timer hardware.
 //

@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_ints.h - Macros that define the interrupt assignment on Stellaris.
 //

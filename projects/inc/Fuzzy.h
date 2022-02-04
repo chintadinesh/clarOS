@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      Fuzzy.h
  * @brief     Fuzzy Logic functions
  * @details   <b>Fuzzy logic</b> is a design pattern for digital controllers.

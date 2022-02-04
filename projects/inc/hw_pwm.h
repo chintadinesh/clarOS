@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_pwm.h - Defines and Macros for Pulse Width Modulation (PWM) ports.
 //

@@ -1,4 +1,5 @@
 // ADCT0ATrigger.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Provide a function that initializes Timer0A to trigger ADC
 // SS3 conversions and request an interrupt when the conversion

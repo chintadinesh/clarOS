@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_lcd.h - Defines and macros used when accessing the LCD controller.
 //

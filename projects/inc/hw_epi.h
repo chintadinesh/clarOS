@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_epi.h - Macros for use in accessing the EPI registers.
 //

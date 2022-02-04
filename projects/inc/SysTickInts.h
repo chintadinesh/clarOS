@@ -1,4 +1,5 @@
 // SysTickInts.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use the SysTick timer to request interrupts at a particular period.
 // Daniel Valvano

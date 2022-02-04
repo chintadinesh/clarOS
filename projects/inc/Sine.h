@@ -1,4 +1,5 @@
 // Sine.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use linear interpolation to implement a sine table lookup using a table
 // of only 21 elements.  For input values between table entries, it is

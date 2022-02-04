@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_usb.h - Macros for use in accessing the USB registers.
 //

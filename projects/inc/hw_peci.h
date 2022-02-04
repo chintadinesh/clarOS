@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_peci.h - Macros used when accessing the PECI hardware.
 //

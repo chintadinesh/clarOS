@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      LPF.h
  * @brief     implements four FIR low-pass filters
  * @details   Finite length LPF<br>

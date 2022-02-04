@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_lpc.h - Macros used when accessing the LPC hardware.
 //

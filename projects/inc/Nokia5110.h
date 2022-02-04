@@ -1,4 +1,5 @@
 // Nokia5110.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use SSI0 to send an 8-bit code to the Nokia5110 48x84
 // pixel LCD to display text, images, or other information.

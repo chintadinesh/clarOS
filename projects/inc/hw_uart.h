@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_uart.h - Macros and defines used when accessing the UART hardware.
 //

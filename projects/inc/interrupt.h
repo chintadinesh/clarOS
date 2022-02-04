@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // interrupt.h - Prototypes for the NVIC Interrupt Controller Driver.
 //

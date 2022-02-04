@@ -1,4 +1,5 @@
 // Board.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Provide functions that initialize a GPIO as an input pin and
 // allow reading of two negative logic switches on PF0 and PF4

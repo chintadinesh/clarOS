@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      IRDistance.h
  * @brief     Take infrared distance measurements
  * @details   Provide mid-level functions that convert raw ADC

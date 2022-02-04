@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      opt3101.h
  * @brief     Mid-level software driver for the OPT3101 time of flight sensor
  * @details   TM4C123 is master. I2C0 is connected to OPT3101<br>

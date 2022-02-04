@@ -1714,6 +1714,11 @@ int fputc(int ch, FILE *f) {
 // No input from Nokia, always return data.
 int fgetc(FILE *f) { return 0; }
 // Function called when file error occurs.
+
+#ifdef ferror
+#undef ferror
+#endif
+
 int ferror(FILE *f) {
   /* Your implementation of ferror */
   return EOF;

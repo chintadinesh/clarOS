@@ -1,4 +1,5 @@
 // FreqMeasure.h
+#include <stdint.h>
 // Runs on TM4C123
 // Measures frequency on PB7/T0CCP1 input
 // Timer0A in periodic mode to request interrupts at 100 Hz

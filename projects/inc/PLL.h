@@ -1,4 +1,5 @@
 // PLL.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // A software function to change the bus frequency using the PLL.
 // Daniel Valvano

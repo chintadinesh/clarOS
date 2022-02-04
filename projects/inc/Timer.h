@@ -1,4 +1,5 @@
 // Timer.h
+#include <stdint.h>
 // Runs on TM4C123
 // Provide pulse measurement functions for Timer0, Timer1, Timer2 and Timer3,
 

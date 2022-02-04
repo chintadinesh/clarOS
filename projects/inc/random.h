@@ -1,4 +1,5 @@
 /*Random number generator;
+#include <stdint.h>
   Linear congruential generator
   from Numerical Recipes by Press et al.
   Jonathan Valvano

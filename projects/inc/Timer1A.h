@@ -1,4 +1,5 @@
 // Timer1A.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use Timer1 in 32-bit periodic mode to request interrupts at a periodic rate
 // Daniel Valvano

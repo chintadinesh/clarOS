@@ -1,4 +1,5 @@
 // PWM.h
+#include <stdint.h>
 // Runs on TM4C123
 // Use PWM0A/PB6 and PWM0B/PB7 to generate pulse-width modulated outputs.
 // Daniel Valvano

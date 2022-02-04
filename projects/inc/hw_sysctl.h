@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_sysctl.h - Macros used when accessing the system control hardware.
 //

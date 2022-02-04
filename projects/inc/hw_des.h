@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_des.h - Macros used when accessing the DES hardware.
 //

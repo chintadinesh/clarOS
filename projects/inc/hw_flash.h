@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_flash.h - Macros used when accessing the flash controller.
 //

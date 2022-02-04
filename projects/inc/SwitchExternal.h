@@ -1,4 +1,5 @@
 // SwitchExternal.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Provide functions that initialize a GPIO as an input pin and
 // as external switches on PA5 and PB1.

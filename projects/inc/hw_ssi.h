@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_ssi.h - Macros used when accessing the SSI hardware.
 //

@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_ethernet.h - Macros used when accessing the Ethernet hardware.
 //

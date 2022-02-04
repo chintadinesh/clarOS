@@ -1,4 +1,5 @@
 // LaunchPad.h
+#include <stdint.h>
 // Runs on TM4C123
 // Input from switches, output to LED
 // Jonathan Valvano

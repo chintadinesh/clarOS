@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_shamd5.h - Macros used when accessing the SHA/MD5 hardware.
 //

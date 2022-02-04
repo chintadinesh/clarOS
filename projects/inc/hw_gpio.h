@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_gpio.h - Defines and Macros for GPIO hardware.
 //

@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_nvic.h - Macros used when accessing the NVIC hardware.
 //

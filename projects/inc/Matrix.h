@@ -1,4 +1,5 @@
 // Matrix.h
+#include <stdint.h>
 // Runs on  LM4F120/TM4C123
 // Provide functions that initialize GPIO ports and SysTick
 // Use periodic polling

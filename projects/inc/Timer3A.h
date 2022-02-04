@@ -1,4 +1,5 @@
 // Timer3A.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use Timer3A in 32-bit periodic mode to request interrupts at a periodic rate
 // Daniel Valvano

@@ -1,4 +1,5 @@
 // *****************Texas.h**************
+#include <stdint.h>
 // Open version of TExaS
 // analog scope on PD3 using ADC1, Timer5 and UART0
 // Runs on either TM4C123

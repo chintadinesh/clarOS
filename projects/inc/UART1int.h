@@ -1,4 +1,5 @@
 // UART.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use UART1 to implement bidirectional data transfer to and from another
 // microcontroller U1Rx PB0 is RxD (input to this microcontroller) U1Tx PB1 is

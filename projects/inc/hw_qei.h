@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_qei.h - Macros used when accessing the QEI hardware.
 //

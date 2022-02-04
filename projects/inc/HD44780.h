@@ -1,4 +1,5 @@
 // LCD.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // header file for the LCD
 // Valvano

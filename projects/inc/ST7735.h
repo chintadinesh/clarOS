@@ -1,4 +1,5 @@
 /***************************************************
+#include <stdint.h>
   This is a library for the Adafruit 1.8" SPI display.
   This library works with the Adafruit 1.8" TFT Breakout w/SD card
   ----> http://www.adafruit.com/products/358
@@ -303,7 +304,6 @@ void ST7735_DrawChar(int16_t x, int16_t y, char c, int16_t textColor,
 // bgColor is Black and size is 1
 // Output: number of characters printed
 uint32_t ST7735_DrawString(uint16_t x, uint16_t y, char *pt, int16_t textColor);
-;
 
 //********ST7735_SetCursor*****************
 // Move the cursor to the desired X- and Y-position.  The

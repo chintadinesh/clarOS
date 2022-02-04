@@ -1,4 +1,5 @@
 // FIFO.h
+#include <stdint.h>
 // Runs on any LM3Sxxx
 // Provide functions that initialize a FIFO, put data in, get data out,
 // and return the current size.  The file includes a transmit FIFO
@@ -47,7 +48,7 @@ void EndCritical(long sr);  // restore I bit to previous value
       return (FAIL);                                    \
     }                                                   \
     NAME##Fifo[NAME##PutI & (SIZE - 1)] = data;         \
-    NAME##PutI##++;                                     \
+    NAME##PutI = NAME##PutI + 1;                        \
     return (SUCCESS);                                   \
   }                                                     \
   int NAME##Fifo_Get(TYPE *datapt) {                    \
@@ -55,7 +56,7 @@ void EndCritical(long sr);  // restore I bit to previous value
       return (FAIL);                                    \
     }                                                   \
     *datapt = NAME##Fifo[NAME##GetI & (SIZE - 1)];      \
-    NAME##GetI##++;                                     \
+    NAME##GetI = NAME##GetI + 1;                        \
     return (SUCCESS);                                   \
   }                                                     \
   unsigned short NAME##Fifo_Size(void) {                \

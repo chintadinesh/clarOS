@@ -1,4 +1,5 @@
 // Profile.h
+#include <stdint.h>
 // Runs on TM4C123
 // Implement the profiling interface on the TM4C123.  This
 // header file is very hardware-specific because it defines the

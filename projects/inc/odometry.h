@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      odometry.h
  * @brief     Count wheel rotations and maintain robot position and angle
  * @details   Inputs to the system are left and right tachometer counts.

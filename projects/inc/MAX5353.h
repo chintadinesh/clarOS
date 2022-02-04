@@ -1,4 +1,5 @@
 // MAX5353.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use SSI0 to send a 16-bit code to the MAX5353.
 // Daniel Valvano

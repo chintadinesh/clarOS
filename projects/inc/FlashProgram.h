@@ -1,4 +1,5 @@
 // FlashProgram.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Provide functions that initialize the flash memory, write
 // 32-bit data to flash, write an array of 32-bit data to flash,

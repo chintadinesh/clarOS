@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_fan.h - Macros used when accessing the fan control hardware.
 //

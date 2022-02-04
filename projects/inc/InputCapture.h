@@ -1,4 +1,5 @@
 // InputCapture.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use Timer0A in edge time mode to request interrupts on the rising
 // edge of PB0 (CCP0), and count the pulses.

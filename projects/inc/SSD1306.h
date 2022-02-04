@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      SSD1306.h
  * @brief     Provide simple I/O functions for the SSD 1306 OLED
  * @details   Use I2C to send an 8-bit code to the 1306 64x128

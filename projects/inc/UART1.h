@@ -1,4 +1,5 @@
 // UART1.h
+#include <stdint.h>
 // Dung Nguyen
 // Wally Guzman
 

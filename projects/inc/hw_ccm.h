@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_ccm.h - Macros used when accessing the CCM hardware.
 //

@@ -1,4 +1,5 @@
 // WifiSettings.h
+#include <stdint.h>
 // Dung Nguyen
 // Wally Guzman
 

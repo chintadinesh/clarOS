@@ -1,4 +1,5 @@
 // FIFO.h
+#include <stdint.h>
 // Runs on any LM3Sxxx
 // Provide functions that initialize a FIFO, put data in, get data out,
 // and return the current size.  The file includes a transmit FIFO

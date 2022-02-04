@@ -1,4 +1,5 @@
 // SysTick.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Provide functions that initialize the SysTick module, wait at least a
 // designated number of clock cycles, and wait approximately a multiple

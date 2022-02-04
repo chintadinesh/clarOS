@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_comp.h - Macros used when accessing the comparator hardware.
 //

@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_can.h - Defines and macros used when accessing the CAN controllers.
 //

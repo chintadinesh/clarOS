@@ -1,4 +1,5 @@
 // DMATimer.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Periodic timer triggered DMA transfer
 // Uses Timer5A to trigger the DMA, read from an 8-bit PORT, and then write to a

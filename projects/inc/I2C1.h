@@ -1,4 +1,5 @@
 /**
+#include <stdint.h>
  * @file      I2C1.h
  * @brief     Low-level software driver for I2C
  * @details   TM4C123 is master. I2C1 is connected to PD0=SCL, PD1=SDA<br>

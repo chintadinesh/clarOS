@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_memmap.h - Macros defining the memory map of the device.
 //

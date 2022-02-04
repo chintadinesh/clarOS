@@ -1,4 +1,5 @@
 // MAX549.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use SSI0 to send a 16-bit code to the MAX539 and return
 // the reply.

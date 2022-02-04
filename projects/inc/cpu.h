@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // cpu.h - Prototypes for the CPU instruction wrapper functions.
 //

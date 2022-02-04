@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_i2c.h - Macros used when accessing the I2C master and slave hardware.
 //

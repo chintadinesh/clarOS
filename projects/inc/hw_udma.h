@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_udma.h - Macros for use in accessing the UDMA registers.
 //

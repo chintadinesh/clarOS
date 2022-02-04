@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_adc.h - Macros used when accessing the ADC hardware.
 //

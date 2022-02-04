@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // asmdefs.h - Macros to allow assembly code be portable among toolchains.
 //

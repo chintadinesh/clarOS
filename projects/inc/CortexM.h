@@ -1,4 +1,5 @@
 // CortexM.h
+#include <stdint.h>
 // Cortex M registers used in these labs
 // Daniel and Jonathan Valvano
 // Jan 2, 2020

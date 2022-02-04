@@ -1,4 +1,5 @@
 // Timer0APWM.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use Timer0A in PWM mode to generate a square wave of a given
 // period and duty cycle.  Timer0A can use PF0 or PB6.  PB6 is

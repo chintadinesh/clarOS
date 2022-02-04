@@ -1,4 +1,5 @@
 // DMASPI.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Periodic timer triggered DMA transfer
 // Uses Timer5A to trigger the DMA, read from a 16-bit buffer, and then write to

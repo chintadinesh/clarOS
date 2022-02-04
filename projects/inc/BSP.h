@@ -1,4 +1,5 @@
 // BSP.h
+#include <stdint.h>
 // Runs on either the TM4C123 or MSP432 with a Educational BoosterPack MKII
 // (BOOSTXL-EDUMKII) This file contants the function prototypes for the software
 // interface to the MKII BoosterPack. This board support package (BSP) is an

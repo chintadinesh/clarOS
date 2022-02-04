@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_aes.h - Macros used when accessing the AES hardware.
 //

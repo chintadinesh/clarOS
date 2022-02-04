@@ -1,4 +1,5 @@
 // LLFifo.h
+#include <stdint.h>
 // Runs on any computer
 // linked list FIFO
 // Jonathan Valvano

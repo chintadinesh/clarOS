@@ -1,4 +1,5 @@
 // DMATimer.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Periodic timer triggered DMA transfer
 // source: One large byte-aligned memory

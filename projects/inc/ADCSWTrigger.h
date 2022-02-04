@@ -1,4 +1,5 @@
 // ADCSWTrigger.h
+#include <stdint.h>
 // Runs on TM4C123
 // Provide functions that initialize ADC0 SS3 to be triggered by
 // software and trigger a conversion, wait for it to finish,

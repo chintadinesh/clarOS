@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_emac.h - Macros used when accessing the EMAC hardware.
 //

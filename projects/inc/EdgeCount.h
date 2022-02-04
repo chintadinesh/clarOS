@@ -1,4 +1,5 @@
 // EdgeCount.c
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Use Timer0A in edge count mode to count the rising edge on PB6.
 // Jonathan Valvano

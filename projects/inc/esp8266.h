@@ -1,4 +1,5 @@
 //***********************  ESP8266.h  ***********************
+#include <stdint.h>
 // Program written by:
 // - Steven Prickett  steven.prickett@gmail.com
 //

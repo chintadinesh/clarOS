@@ -1,4 +1,5 @@
 // GPIO.h
+#include <stdint.h>
 // Runs on TM4C123
 // Digital input/output from TM4C123 LaunchPad to CC2650
 // Jonathan Valvano

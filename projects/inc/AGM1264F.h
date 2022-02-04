@@ -1,4 +1,5 @@
 //*****************AGM1264F.h***************************************
+#include <stdint.h>
 // implementation of the driver for the AGM1264F MODULE
 // Jonathan W. Valvano 11/8/11
 // modified to run on LM4F120 launchpad on 10/8/12

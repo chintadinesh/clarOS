@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_timer.h - Defines and macros used when accessing the timer.
 //

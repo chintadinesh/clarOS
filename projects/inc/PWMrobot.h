@@ -1,4 +1,5 @@
 // PWMrobot.h
+#include <stdint.h>
 // Runs on TM4C123 (not LM4F120)
 // Use PWM0A/PB6 and PWM0B/PB7 to generate pulse-width modulated outputs
 // Use PWM1A/PB4 and PWM1B/PB5 to generate pulse-width modulated outputs

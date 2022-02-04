@@ -1,4 +1,5 @@
 // UART.h
+#include <stdint.h>
 // LM4F120, TM4C123, TM4C1294
 // Simple device driver for the UART.
 // Daniel Valvano

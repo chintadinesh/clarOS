@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_hibernate.h - Defines and Macros for the Hibernation module.
 //

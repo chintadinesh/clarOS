@@ -1,4 +1,5 @@
 // PWMDual.h
+#include <stdint.h>
 // Runs on TM4C123
 // Use PWM0/PB6 and PWM1/PB7 to generate two square waves with 50% duty cycle
 // and 180 degrees out of phase.

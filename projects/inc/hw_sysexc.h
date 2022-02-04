@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // hw_sysexc.h - Macros used when accessing the system exception module.
 //

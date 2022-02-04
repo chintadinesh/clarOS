@@ -1,4 +1,5 @@
 // Clock.h
+#include <stdint.h>
 // Runs on the TM4C123
 // Daniel and Jonathan Valvano
 // July 21, 2016

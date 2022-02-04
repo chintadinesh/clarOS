@@ -1,4 +1,5 @@
 //*****************************************************************************
+#include <stdint.h>
 //
 // debug.h - Macros for assisting debug of the driver library.
 //

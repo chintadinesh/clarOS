@@ -1,4 +1,5 @@
 // I2C0.h
+#include <stdint.h>
 // Runs on LM4F120/TM4C123
 // Provide a function that initializes, sends, and receives the I2C0 module
 // interfaced with an HMC6352 compass or TMP102 thermometer.

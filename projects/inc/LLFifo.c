@@ -22,6 +22,9 @@
  */
 #include <stdint.h>
 
+// the include file is not being found
+// tempororily commenting the code
+/*
 #include "../inc/HeapBlock.h"
 
 #define NULL 0  // definition of empty pointer
@@ -72,3 +75,4 @@ int Fifo_Get(int32_t *datapt) {
   Heap_Release((int32_t *)pt);
   return (1);  // success
 }
+*/

@@ -1,4 +1,5 @@
 // EdgeInterruptPortF.h
+#include <stdint.h>
 // Runs on LM4F120 or TM4C123
 // Request an interrupt on the falling edge of PF4 (when the user
 // button is pressed) and increment a counter in the interrupt.  Note

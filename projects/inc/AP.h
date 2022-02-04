@@ -1,4 +1,5 @@
 // AP.h
+#include <stdint.h>
 // Runs on either TM4C123 or MSP432
 // see GPIO.c file for hardware connections
 

@@ -109,7 +109,7 @@
 
 void (*ADCTask)(
     uint32_t);  // user function to be called when new ADC data ready
-void dummyADC(uint32_t data){};
+void dummyADC(uint32_t data) { ; }
 
 // Sample the ADC using Timer0 hardware triggering using SS0
 // this function initiates the sampling, does not wait for completion
